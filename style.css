@@ -1,0 +1,173 @@
+/* style.css */
+
+/* Reset dei margini e dei padding */
+body, h1, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+body {
+
+  /*solo nero */
+  /*
+  font-family: Garamond, sans-serif;
+  line-height: 1.5;
+  background-color: #000000;
+  color: #FEFEFE;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  */
+
+  /* Stile globale con immagine*/
+  
+  font-family: Garamond, sans-serif;
+  line-height: 1.5;
+  background: url("thunder_lake_1.png")  no-repeat fixed;
+  margin:0;
+  padding:0;
+  overflow: hidden;
+  background-size: 100% 100%;
+  
+  
+}
+
+
+header {
+  text-align: center;
+  width: 100%;
+  color: #FDFCFC;
+  margin-top: 5px;
+  font-size: 25px;
+}
+
+main {
+  text-align: center;
+  width: 100%;
+  /*color: #777;*/
+  color: #FDFCFC;
+}
+
+section ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+main section ul li {
+
+  /*margin-top: 10px;*/
+
+}
+
+header, nav, main, footer {
+  padding: 5px;
+  /*margin-bottom: 1px;*/
+  /*background-color: #fff*/;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-bottom: 100px;
+}
+
+
+nav {
+  text-align: center;
+  width: 100%;
+  position: fixed;
+}
+
+nav ul {
+  list-style: none;
+  font-size: 25px;
+}
+
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #FDFCFC;
+}
+
+#menu {
+  position: fixed;
+  width: 100%;
+}
+
+
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: #FDFCFC;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  /*background-color: #f9f9f9;*/
+  text-align: center;
+  padding: 10px 0;
+}
+
+p {
+  text-align: center;
+  color: #FDFCFC;
+
+}
+
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.data-analyst {
+  font-size: 80px ;
+  color: #FDFCFC;
+  margin-bottom: 30px;
+  margin-top: 50px; 
+}
+
+.profilo-img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+
+}
+
+/*
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+*/
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  z-index: -1;
+}
+
+.container2 {
+  width: 50%;
+  margin: 50px auto 0;
+  text-align: center;
+}
+
+.container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
