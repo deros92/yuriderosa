@@ -78,13 +78,13 @@ nav a:hover, nav a:focus {
 }
 
 
-/*
+
 main {
     background-color: #000000;
     background-size: 100% 100%; 
     background-repeat: no-repeat;
 }
-*/
+
 
 
 section {
@@ -185,6 +185,7 @@ transform: scale(1.1);
 
 #cv{
     margin-top: 100px;
+    color: #FDFCFC;
 }
 
 #cv a:hover, #cv a:focus {
@@ -192,7 +193,10 @@ transform: scale(1.1);
     font-size: 120%;
 }
 
-
+a.no-link-style {
+  color: inherit;
+  text-decoration: none;
+}
 
 
 #contact {
