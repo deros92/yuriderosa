@@ -1,406 +1,200 @@
 <!DOCTYPE html>
-<html>
+<html lang="en"> 
+
 
 <head>
-    <title>Yuri De Rosa</title>
-    <style>
-        body {
-            font-family: Garamond, sans-serif;
-            overflow-x: hidden; 
-            background-color: #000000;     
-        }
-
-        header {
-            background-image: url(thunder_lake_1.png);
-            background-position: top;
-            background-repeat: no-repeat;
-            text-align: center;
-            padding: 50px;
-            background-size: 100% 100%;
-            height: 600px; 
-            margin-left: -8px;
-            margin-right: -8px
-
-        }
-
-        nav {
-			
-			background-image: url(thunder_lake_1.png);
-			background-size: cover;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-			z-index: 1
-
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
-            border: 1px solid #fff; 
-            padding: 5px 10px; 
-        } 
-
-		nav a:hover {
-			
-			color: #DC143C;
-			padding: 5px 10px;
-			border-radius: 5px;
-			border-bottom: 2px solid #DC143C;
-			border-top: 2px solid #DC143C;
-			border-left: 2px solid #DC143C;
-			border-right: 2px solid #DC143C;
-			font-size: 120%;
-		}
-
-
-        section {
-            margin: 50px;
-            color: #FDFCFC;
-
-
-        }
-
-        main {
-            background-color: #000000;
-            background-size: 100% 100%; 
-            background-repeat: no-repeat;
-        }
-
-        section ul {
-          display: flex;
-          justify-content: center;
-
-        }
-
-        section h2,
-        section p,
-        section ul,
-        section li,
-        section a {
-          text-align: center;
-          margin: 10px;
-        }
-
-
-		h2 {
-			font-size: 30px;
-		}
-
-
-        a.no-link-style {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-image: url(thunder_lake_1.png);
-			background-size: 100% 100%;
-            color: #fff;
-        }
-
-        #header-text {
-            text-align: center;
-            width: 100%;
-            color: #FDFCFC;
-            margin-top: -10px; 
-            font-size: 50px; 
-        }
-
-        #deros-image {
-            border-radius: 50%;
-            max-width: 200px; 
-            margin-top: 90px; 
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        #canvas-container {
-            position: absolute;
-            top: 0;
-            left: 0;   
-        }
-
-		#intro p {
-			line-height: 2.5; 
-		}
-
-
-		#intro p:hover {
-			color: #DC143C;
-		}
-
-		#intro{
-			margin-top: 100px;
-		}
-
-		#AIArt{
-			margin-top: 100px;
-		}
-
-		#portfolio{
-			margin-top: 100px;
-		}
-
-		#cv{
-			margin-top: 100px;
-		}
-
-		#cv a:hover {
-			color: #DC143C;
-			font-size: 120%;
-		}
-
-        #contact {
-			text-align: center;
-			margin-top: 100px;
-        }
-
-		#contact a {
-          margin-bottom: 10px ;
-          display: inline-block;
-          border-radius: 50%;
-          max-width: 24px
-        }
-
-		#contact a:hover {
-			color: #DC143C;
-			font-size: 120%;
-		}
-
-		.row {
-		  text-align: center; 
-		}
-        .container {
-            position: relative;
-            display: inline-block;
-        }
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            transition: opacity 0.3s;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 18px;
-            pointer-events: none;
-            text-align: center
-        }
-        .container:hover .overlay {
-            opacity: 1;
-        }
-        .container img {
-            cursor: pointer;
-            width: 200px; 
-            height: auto;
-            margin: 10px;
-        }
-
-		.container:hover img {
-		transform: scale(1.1); 
-		}
-
-        .container2{
-            position: relative;
-            display: inline-block;
-
-        }
-        .container2 img {
-            width: 200px; 
-            height: auto;
-            margin: 10px;
-        }
-
-
-    </style>
+	<title> YURI DE ROSA PORTFOLIO </title>
+	<link rel="stylesheet" href="style.css" /> 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" /> <!-- icone per introduction -->
 </head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" /> 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick-theme.css">
 <body>
-    <canvas id="canvas"></canvas>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
-    <script src="particelle_V3.js"></script>   
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<script>
-        function openFile2(filename) {
-            window.open(filename, '_blank');
-        }  
 
-        $(document).ready(function() {
-            $('nav a').click(function(event) {
-                event.preventDefault();
-                var target = $(this).attr('href');
-                var offset = 50; 
-                
-                $('html, body').animate({
-                    scrollTop: $(target).offset().top - offset
-                }, 800); 
-            });
+	function openFile2(element) {
+	        var filepath = element.getAttribute('data-filepath');
+	        if (filepath) {
+	            window.open(filepath, '_self');
+	        }
+	    }
+
+    function handleKeyPress(event, element) {
+        if (event.key === 'Enter') {
+            openFile2(element);
+        }
+    }
+
+    // Aggiungi un evento di click e keypress a tutti gli elementi con classe "container"
+    document.querySelectorAll('.container').forEach(function(element) {
+        element.addEventListener('click', function(event) {
+            event.preventDefault();
+            openFile2(this);
         });
 
+        element.addEventListener('keypress', function(event) {
+            handleKeyPress(event, this);
+        });
+    });
+
     </script>  
+
+    <script>
+		$(document).ready(function() {
+			$('nav a').click(function(event) {
+				event.preventDefault();
+			var target = $(this).attr('href');
+			var offset = 50; 
+
+			$('html, body').animate({
+				scrollTop: $(target).offset().top - offset
+			}, 800); 
+		});
+		});
+    </script>
+
+
+
+    <div id="skip-link">
+        <a id="skip-to-content" href="#portfolio">Salta al contenuto principale</a> |
+        <a id="skip-to-footer" href="#contact">Salta al footer</a>
+    </div>
+
     <header id="header">
-        <div id="canvas-container">
-            <canvas id="canvas"></canvas>
-        </div>
-        <h1 id="header-text"><b><i>"Always account for variable change"</i> </b></h1>
-        <img id="deros-image" src="Deros_AI_3.png" alt="Deros AI">
+        <h1 id="header-text"><strong><em>"Always account for variable change"</em> </strong></h1>  
+        <img id="deros-image" src="Deros_AI_3.png" alt="image of Yuri De Rosa">
     </header>
 
-    <nav>
-        <a href="#header" class="link">Home</a>
-        <a href="#intro" class="link">Intro</a>
-        <a href="#AIArt" class="link">AI Art</a>
-        <a href="#portfolio" class="link">Portfolio</a>
+	<nav>
+	    <a href="#header" class="link">Home</a>
+	    <a href="#intro" class="link">Intro</a>
+	    <a href="#AIArt" class="link">AI Art</a>
+	    <a href="#portfolio" class="link">Portfolio</a>
 		<a href="#cv" class="link">CV</a>
-        <a href="#contact" class="link">Contact</a>
-    </nav>
+	    <a href="#contact" class="link">Contact</a>
+	</nav>
 
-    <main>
-        <section id="intro">
+	<main>
+		<section id="intro">
             <h2>INTRODUCTION</h2>
-            <p> <i> Trading, Data Science and Electronic Dance Music. Everything else is just white noise. </i> </p>
-			<p>
-				<i class="fas fa-chart-line" style="color: white;"></i>
-				<b>Bachelor’s degree in Economics</b> 
-				<i class="fas fa-graduation-cap"  style="color: white;"></i>
+            <p tabindex="0"> 
+            	<em> Trading, Data Science and Electronic Dance Music. Everything else is just white noise. </em> 
+            </p>
+			<p tabindex="0">
+				<em class="fas fa-chart-line" style="color: white;" alt=""></em>
+				<strong>Bachelor’s degree in Economics</strong> 
+				<em class="fas fa-graduation-cap"  style="color: white;" alt=""></em>
 				
 			</p>
-			<p> 
-				<i class="fas fa-money-bill" style="color: white;"></i>
-				<b>Master’s degree in Banking, Corporate Finance and Financial Markets</b>
-				<i class="fas fa-graduation-cap"  style="color: white;"></i>
+			<p tabindex="0">  
+				<em class="fas fa-money-bill" style="color: white;" alt=""></em>
+				<strong>Master’s degree in Banking, Corporate Finance and Financial Markets</strong>
+				<em class="fas fa-graduation-cap"  style="color: white;" alt=""></em>
 			</p>
-			<p> 
-			<i class="fas fa-laptop-code" style="color: white;"></i>
-			<b>2nd level Master in Big Data Analytics & Social Mining</b>
-			<i class="fas fa-graduation-cap"  style="color: white;"></i>
+			<p tabindex="0"> 
+				<em class="fas fa-laptop-code" style="color: white;" alt=""></em>
+				<strong>2nd level Master in Big Data Analytics & Social Mining</strong>
+				<em class="fas fa-graduation-cap"  style="color: white;" alt=""></em>
 			</p>
-			<p> 
-				<i class="fas fa-code" style="color: white;"></i>
-				<b> Programming Language: </b>
+			<p tabindex="0"> 
+				<em class="fas fa-code" style="color: white;" alt=""></em>
+				<strong> Programming Language: </strong>
 				Python, R, MATLAB, HTML, CSS, SQL, PL/SQL
             </p>
-			<p> 
-				<i class="fas fa-code" style="color: white;"></i>
-				<b> Tools: </b>
+			<p tabindex="0"> 
+				<em class="fas fa-code" style="color: white;" alt=""></em>
+				<strong> Tools: </strong>
 				Excel, Power BI, Tableau
 			</p>
 
         </section> 
-
-
-		<section id="AIArt">
+        <section id="AIArt">
 		  <h2>AI ART</h2>
 		  <div class="row">
-			<div class="container" onclick="openFile2('thunder/Thunder_repo.html')">
-			  <img src="1.png" alt="Immagine cliccabile">
+			<div class="container" data-filepath="thunder/Thunder_repo.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			  <img src="1.png" alt="click and discover other images">
 			  <div class="overlay">Thunder</div>
 			</div>
-			<div class="container" onclick="openFile2('nature/Nature_repo.html')">
-			  <img src="orange_lake_2.png" alt="Immagine cliccabile">
+			<div class="container" data-filepath="nature/Nature_repo.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			  <img src="orange_lake_2.png" alt="Iclick and discover other images">
 			  <div class="overlay">Nature</div>
 			</div>
-			<div class="container" onclick="openFile2('phoenix/Phoenix_repo.html')">
-			  <img src="Phoenix12.png" alt="Immagine cliccabile">
+			<div class="container" data-filepath="phoenix/Phoenix_repo.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			  <img src="Phoenix12.png" alt="click and discover other images">
 			  <div class="overlay">Phoenix</div>
 			</div>
-			<!--
-			<div class="container" onclick="openFile2('villain/Villain_repo.html')">
-			  <img src="villain.png" alt="Immagine cliccabile">
-			  <div class="overlay">Villain</div>
-			</div>
-			-->
-			<div class="container" onclick="openFile2('darkness/Darkness_repo.html')">
-			  <img src="darkness_desktop.png" alt="Immagine cliccabile">
+			<div class="container" data-filepath="darkness/Darkness_repo.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			  <img src="darkness_desktop.png" alt="click and discover other images">
 			  <div class="overlay">Darkness</div>
 			</div>
-			<div class="container" onclick="openFile2('anime/Anime_repo.html')">
-			  <img src="anime.png" alt="Immagine cliccabile">
+			<div class="container"data-filepath="anime/Anime_repo.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			  <img src="anime.png" alt="click and discover other images">
 			  <div class="overlay">Anime</div>
 			</div>
-			<div class="container" onclick="openFile2('heroes/Heroes_repo.html')">
-			  <img src="heroes.png" alt="Immagine cliccabile">
+			<div class="container" data-filepath="heroes/Heroes_repo.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			  <img src="heroes.png" alt="click and discover other images">
 			  <div class="overlay">Heroes</div>
 			</div>
 		  </div>
 		</section>
-		
-
 
 		<section id="portfolio">
 		  <h2>PORTFOLIO</h2>
 		  <div class="row">
-			<div class="container" onclick="openFile2('Geomarketing_1.html')">
-			  <img src="world map2.png" alt="Immagine cliccabile">
+			<div class="container" data-filepath="Geomarketing_1.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			  <img src="world map2.png" alt="Click and discover the project">
 			  <div class="overlay">Customers Analysis: tessellation of 10000 meters x 10000 with synthetic data with Folium Visualization</div>
 			</div>
-			<div class="container" onclick="openFile2('https://public.tableau.com/shared/P8Z72XH2Q?:display_count=n&:origin=viz_share_link')">
-			  <img src="world_map3.png" alt="Immagine cliccabile">
+			<div class="container" data-filepath="https://public.tableau.com/shared/P8Z72XH2Q?:display_count=n&:origin=viz_share_link" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			  <img src="world_map3.png" alt="Click and discover the project">
 			  <div class="overlay">Customer Analysis:Provincial boundaries with Tableau Visualization</div>
 			</div>
-			<div class="container" onclick="openFile2('https://masterbigdata.it/project-files/2019-2020/panicBuying/')">
-			  <img src="covid panic buying.png" alt="Immagine cliccabile">
+			<div class="container" data-filepath="https://masterbigdata.it/project-files/2019-2020/panicBuying/" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			  <img src="covid panic buying.png" alt="Click and discover the project">
 			  <div class="overlay">Covid Panic Buying</div>
 			</div>
-			<div class="container" onclick="openFile2('coming_soon.html')">
-			  <img src="Artificial Intelligence.png" alt="Immagine cliccabile">
+			<div class="container" data-filepath="coming_soon.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			  <img src="Artificial Intelligence.png" alt="Click and discover the project">
 			  <div class="overlay">Machine Learning</div>
 			</div>
 		  </div>
 		  <div class="row">
-			<div class="container" onclick="openFile2('coming_soon.html')">
-			  <img src="5.png" alt="Immagine cliccabile">
+			<div class="container" data-filepath="coming_soon.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			  <img src="5.png" alt="Click and discover the project">
 			  <div class="overlay">Forecasting</div>
 			</div>
-			<div class="container" onclick="openFile2('https://github.com/deros92/Scraping/blob/main/Meteo_2023.ipynb')">
-			  <img src="scraping.png" alt="Immagine cliccabile">
+			<div class="container" data-filepath="https://github.com/deros92/Scraping/blob/main/Meteo_2023.ipynb" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			  <img src="scraping.png" alt="Click and discover the project">
 			  <div class="overlay">Scraping</div>
 			</div>
-			<div class="container" onclick="openFile2('https://observablehq.com/@deros92?tab=notebooks')">
-			  <img src="7.png" alt="Immagine cliccabile">
+			<div class="container" data-filepath="https://observablehq.com/@deros92?tab=notebooks" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			  <img src="7.png" alt="Click and discover the project">
 			  <div class="overlay">Data Visualization</div>
 			</div>
-			<div class="container" onclick="openFile2('https://deros92-riskmatrix-app-rbgc3w.streamlit.app/')">
-			  <img src="trading.png" alt="Immagine cliccabile">
+			<div class="container" data-filepath="https://deros92-riskmatrix-app-rbgc3w.streamlit.app/" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			  <img src="trading.png" alt="Click and discover the project">
 			  <div class="overlay">Nasdaq Riskmatrix</div>
 			</div>
 		  </div>
 		</section>
 
 		<section id="cv"  class="selected">
-			<h2><a href="CV_De_Rosa_Yuri.pdf" class="no-link-style" target="_blank">CURRICULUM VITAE</a></h2>
+			<h2><a href="CV_De_Rosa_Yuri.pdf" class="no-link-style" target="_self" alt="Click for download the CV">CURRICULUM VITAE</a></h2>
 			<p>You can download my CV by clicking the link above.</p>
 		</section>
 
         <section id="contact">
             <h2>CONTACT</h2>
             <p></p>
-            <a href="https://www.linkedin.com/in/yuriderosa/"><i class="fab fa-linkedin fa-lg"></i></a>
-            <a href="mailto:yuriderosa92@gmail.com"><i class="fas fa-envelope fa-lg"></i></a>
-            <a href="https://github.com/deros92"><i class="fab fa-github fa-lg"></i></a>
+            <a href="https://www.linkedin.com/in/yuriderosa/"><em class="fab fa-linkedin fa-lg" alt=""></em></a>
+            <a href="mailto:yuriderosa92@gmail.com"><em class="fas fa-envelope fa-lg" alt=""></em></a>
+            <a href="https://github.com/deros92"><em class="fab fa-github fa-lg" alt=""></em></a>
         </section>
 
+	</main>
 
-    </main>
     <footer>
         <p>2023 Yuri De Rosa. All rights reserved</p>
     </footer>
 
 </body>
-
 </html>

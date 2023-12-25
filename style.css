@@ -1,173 +1,232 @@
-/* style.css */
-
-/* Reset dei margini e dei padding */
-body, h1, p, ul, li {
-  margin: 0;
-  padding: 0;
-}
-
-
 
 body {
-
-  /*solo nero */
-  /*
-  font-family: Garamond, sans-serif;
-  line-height: 1.5;
-  background-color: #000000;
-  color: #FEFEFE;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  */
-
-  /* Stile globale con immagine*/
-  
-  font-family: Garamond, sans-serif;
-  line-height: 1.5;
-  background: url("thunder_lake_1.png")  no-repeat fixed;
-  margin:0;
-  padding:0;
-  overflow: hidden;
-  background-size: 100% 100%;
-  
-  
+    font-family: Garamond, sans-serif;
+    overflow-x: hidden; 
+    background-color: #000000;     
 }
 
 
 header {
-  text-align: center;
-  width: 100%;
-  color: #FDFCFC;
-  margin-top: 5px;
-  font-size: 25px;
-}
-
-main {
-  text-align: center;
-  width: 100%;
-  /*color: #777;*/
-  color: #FDFCFC;
-}
-
-section ul li {
-  display: inline-block;
-  margin-right: 10px;
-}
-main section ul li {
-
-  /*margin-top: 10px;*/
+    background-image: url(thunder_lake_1.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 50px;
+    background-size: 100% 100%;
+    height: 600px; 
+    margin-left: -8px;
+    margin-right: -8px
 
 }
 
-header, nav, main, footer {
-  padding: 5px;
-  /*margin-bottom: 1px;*/
-  /*background-color: #fff*/;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+
+
+#header-text {
+    text-align: center;
+    width: 100%;
+    color: #FDFCFC;
+    margin-top: -10px; 
+    font-size: 50px; 
 }
 
-h2 {
-  margin-bottom: 100px;
-}
 
+#deros-image {
+    border-radius: 50%;
+    max-width: 200px; 
+    margin-top: 90px; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 nav {
-  text-align: center;
-  width: 100%;
-  position: fixed;
-}
-
-nav ul {
-  list-style: none;
-  font-size: 25px;
-}
-
-
-nav ul li {
-  display: inline-block;
-  margin-right: 20px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #FDFCFC;
-}
-
-#menu {
-  position: fixed;
-  width: 100%;
+	
+	background-image: url(thunder_lake_1.png);
+	background-size: cover;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+	z-index: 1
 }
 
 
-footer {
-  text-align: center;
-  font-size: 14px;
-  color: #FDFCFC;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  /*background-color: #f9f9f9;*/
-  text-align: center;
-  padding: 10px 0;
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    border: 1px solid #fff; 
+    padding: 5px 10px; 
+} 
+
+
+
+nav a:hover, nav a:focus {
+    
+    color: #DC143C;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border-bottom: 2px solid #DC143C;
+    border-top: 2px solid #DC143C;
+    border-left: 2px solid #DC143C;
+    border-right: 2px solid #DC143C;
+    font-size: 120%;
 }
 
-p {
-  text-align: center;
-  color: #FDFCFC;
-
-}
-
-
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-.data-analyst {
-  font-size: 80px ;
-  color: #FDFCFC;
-  margin-bottom: 30px;
-  margin-top: 50px; 
-}
-
-.profilo-img {
-  display: block;
-  margin: 0 auto;
-  border-radius: 50%;
-  width: 180px;
-  height: 180px;
-
-}
 
 /*
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 20px;
+main {
+    background-color: #000000;
+    background-size: 100% 100%; 
+    background-repeat: no-repeat;
 }
 */
 
+
+section {
+    margin: 50px;
+    color: #FDFCFC;
+
+}
+
+section h2,
+section p,
+section ul,
+section li,
+section a {
+    text-align: center;
+    margin: 10px;
+}
+
+
+
+
+h2 {
+    font-size: 30px;
+}
+
+
+
+#intro p {
+    line-height: 2.5; /* interlinea*/
+}
+
+
+#intro p:hover, #intro p:focus {
+    color: #DC143C;
+}
+
+#intro{
+    margin-top: 100px; /* margine sopra*/
+}
+
+
+#AIArt{
+    margin-top: 100px;
+}
+
+
+
+
+.row {
+  text-align: center; 
+}
+
 .container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 50%;
-  z-index: -1;
+            position: relative;
+            display: inline-block;
+        }
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    pointer-events: none;
+    text-align: center
 }
 
-.container2 {
-  width: 50%;
-  margin: 50px auto 0;
-  text-align: center;
+.container:hover .overlay, .container:focus .overlay {
+    opacity: 1;
 }
-
 .container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    cursor: pointer;
+    width: 200px; 
+    height: auto;
+    margin: 10px;
 }
+
+.container:hover img, .container:focus img {
+transform: scale(1.1); 
+}
+
+/*
+.container:focus .overlay {
+  visibility: visible;
+}
+*/
+
+#portfolio{
+            margin-top: 100px;
+        }
+
+#cv{
+    margin-top: 100px;
+}
+
+#cv a:hover, #cv a:focus {
+    color: #DC143C;
+    font-size: 120%;
+}
+
+
+
+
+#contact {
+    text-align: center;
+    margin-top: 100px;
+}
+
+#contact a {
+  margin-bottom: 10px ;
+  display: inline-block;
+  /* border-radius: 50%; */
+  /*max-width: 24px */
+}
+
+#contact a:hover, #contact a:focus {
+    color: #DC143C;
+    font-size: 140%;
+}
+
+
+
+
+
+
+
+
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-image: url(thunder_lake_1.png);
+    background-size: 100% 100%;
+    color: #fff;
+}
+
+
+ 
