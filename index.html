@@ -12,6 +12,7 @@
 	<script>
 
 	function openFile2(element) {
+		console.log('openFile2 called');
 	        var filepath = element.getAttribute('data-filepath');
 	        if (filepath) {
 	            window.open(filepath, '_self');
@@ -19,6 +20,7 @@
 	    }
 
     function handleKeyPress(event, element) {
+    	console.log('handleKeyPress called');
         if (event.key === 'Enter') {
             openFile2(element);
         }
@@ -27,7 +29,7 @@
     // Aggiungi un evento di click e keypress a tutti gli elementi con classe "container"
     document.querySelectorAll('.container').forEach(function(element) {
         element.addEventListener('click', function(event) {
-            event.preventDefault();
+            /* event.preventDefault(); */
             openFile2(this);
         });
 
@@ -51,7 +53,23 @@
 		});
 		});
     </script>
+    <script> 
+    	function openFile3(filename) {
+            window.open(filename, '_self');
+        }  
 
+        $(document).ready(function() {
+            $('nav a').click(function(event) {
+                event.preventDefault();
+                var target = $(this).attr('href');
+                var offset = 50; 
+                
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top - offset
+                }, 800); 
+            });
+        });
+    </script>
 
     <header id="header">
         <h1 id="header-text"><strong><em>"Always account for variable change"</em> </strong></h1>  
@@ -104,27 +122,27 @@
         <section id="AIArt">
 		  <h2>AI ART</h2>
 		  <div class="row">
-			<div class="container" data-filepath="thunder/Thunder_repo.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			<div class="container" onclick="openFile3('thunder/Thunder_repo.html')" data-filepath="thunder/Thunder_repo.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
 			  <img src="1.png" alt="click and discover other images">
 			  <div class="overlay">Thunder</div>
 			</div>
-			<div class="container" data-filepath="nature/Nature_repo.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			<div class="container" onclick="openFile3('nature/Nature_repo.html')" data-filepath="nature/Nature_repo.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
 			  <img src="orange_lake_2.png" alt="Iclick and discover other images">
 			  <div class="overlay">Nature</div>
 			</div>
-			<div class="container" data-filepath="phoenix/Phoenix_repo.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			<div class="container" onclick="openFile3('phoenix/Phoenix_repo.html')" data-filepath="phoenix/Phoenix_repo.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
 			  <img src="Phoenix12.png" alt="click and discover other images">
 			  <div class="overlay">Phoenix</div>
 			</div>
-			<div class="container" data-filepath="darkness/Darkness_repo.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			<div class="container" onclick="openFile3('darkness/Darkness_repo.html')" data-filepath="darkness/Darkness_repo.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
 			  <img src="darkness_desktop.png" alt="click and discover other images">
 			  <div class="overlay">Darkness</div>
 			</div>
-			<div class="container"data-filepath="anime/Anime_repo.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			<div class="container" onclick="openFile3('anime/Anime_repo.html')" data-filepath="anime/Anime_repo.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
 			  <img src="anime.png" alt="click and discover other images">
 			  <div class="overlay">Anime</div>
 			</div>
-			<div class="container" data-filepath="heroes/Heroes_repo.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			<div class="container" onclick="openFile3('heroes/Heroes_repo.html')" data-filepath="heroes/Heroes_repo.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
 			  <img src="heroes.png" alt="click and discover other images">
 			  <div class="overlay">Heroes</div>
 			</div>
@@ -134,37 +152,37 @@
 		<section id="portfolio">
 		  <h2>PORTFOLIO</h2>
 		  <div class="row">
-			<div class="container" data-filepath="Geomarketing_1.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			<div class="container" onclick="openFile3('Geomarketing_1.html')" data-filepath="Geomarketing_1.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
 			  <img src="world map2.png" alt="Click and discover the project">
 			  <div class="overlay">Customers Analysis: tessellation of 10000 meters x 10000 with synthetic data with Folium Visualization</div>
 			</div>
-			<div class="container" data-filepath="https://public.tableau.com/shared/P8Z72XH2Q?:display_count=n&:origin=viz_share_link" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			<div class="container" onclick="openFile3('https://public.tableau.com/shared/P8Z72XH2Q?:display_count=n&:origin=viz_share_link')" data-filepath="https://public.tableau.com/shared/P8Z72XH2Q?:display_count=n&:origin=viz_share_link" tabindex="0" onkeypress="handleKeyPress(event, this)">
 			  <img src="world_map3.png" alt="Click and discover the project">
 			  <div class="overlay">Customer Analysis:Provincial boundaries with Tableau Visualization</div>
 			</div>
-			<div class="container" data-filepath="https://masterbigdata.it/project-files/2019-2020/panicBuying/" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			<div class="container" onclick="openFile3('https://masterbigdata.it/project-files/2019-2020/panicBuying/')" data-filepath="https://masterbigdata.it/project-files/2019-2020/panicBuying/" tabindex="0" onkeypress="handleKeyPress(event, this)">
 			  <img src="covid panic buying.png" alt="Click and discover the project">
 			  <div class="overlay">Covid Panic Buying</div>
 			</div>
-			<div class="container" data-filepath="coming_soon.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			<div class="container" onclick="openFile3('coming_soon.html')" data-filepath="coming_soon.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
 			  <img src="Artificial Intelligence.png" alt="Click and discover the project">
 			  <div class="overlay">Machine Learning</div>
 			</div>
 		  </div>
 		  <div class="row">
-			<div class="container" data-filepath="coming_soon.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			<div class="container" onclick="openFile3('coming_soon.html')" data-filepath="coming_soon.html" tabindex="0" onkeypress="handleKeyPress(event, this)">
 			  <img src="5.png" alt="Click and discover the project">
 			  <div class="overlay">Forecasting</div>
 			</div>
-			<div class="container" data-filepath="https://github.com/deros92/Scraping/blob/main/Meteo_2023.ipynb" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			<div class="container" onclick="openFile3('https://github.com/deros92/Scraping/blob/main/Meteo_2023.ipynb')" data-filepath="https://github.com/deros92/Scraping/blob/main/Meteo_2023.ipynb" tabindex="0" onkeypress="handleKeyPress(event, this)">
 			  <img src="scraping.png" alt="Click and discover the project">
 			  <div class="overlay">Scraping</div>
 			</div>
-			<div class="container" data-filepath="https://observablehq.com/@deros92?tab=notebooks" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			<div class="container" onclick="openFile3('https://observablehq.com/@deros92?tab=notebooks')" data-filepath="https://observablehq.com/@deros92?tab=notebooks" tabindex="0" onkeypress="handleKeyPress(event, this)">
 			  <img src="7.png" alt="Click and discover the project">
 			  <div class="overlay">Data Visualization</div>
 			</div>
-			<div class="container" data-filepath="https://deros92-riskmatrix-app-rbgc3w.streamlit.app/" tabindex="0" onkeypress="handleKeyPress(event, this)">
+			<div class="container" onclick="openFile3('https://deros92-riskmatrix-app-rbgc3w.streamlit.app/')" data-filepath="https://deros92-riskmatrix-app-rbgc3w.streamlit.app/" tabindex="0" onkeypress="handleKeyPress(event, this)">
 			  <img src="trading.png" alt="Click and discover the project">
 			  <div class="overlay">Nasdaq Riskmatrix</div>
 			</div>
